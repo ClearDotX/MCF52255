@@ -1,0 +1,598 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+std_error           0x4               ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+my_device           0x20              ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+dbuffer             0xff              ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+report_items        0x1               ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+rs232_ctr           0x4               ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+tr_error            0x4               ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+hid_info            0xc               ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+report_item_list    0x320             ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+ep_info             0x2               ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00040000         xr
+ram              0x20000000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00000000                __DYNAMIC = 0x0
+                0x20000000                PROVIDE (__SRAM, 0x20000000)
+                0x20000000                PROVIDE (_SRAM, 0x20000000)
+                0x40000000                PROVIDE (__IPSBAR, 0x40000000)
+                0x40000000                PROVIDE (_IPSBAR, 0x40000000)
+
+.text           0x00000000     0x5a46
+ *(.vectors)
+ .vectors       0x00000000      0x474 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/mcf5222x_vectors.o
+                0x00000000                VECTOR_TABLE
+                0x00000418                __start
+ *(.text .text.*)
+ .text          0x00000474       0xaa ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/startup.o
+                0x00000474                low_level_init
+ *fill*         0x0000051e        0x2 00
+ .text          0x00000520      0x2fa ../../../../../usb-host/src/mcf5222x/host_ints.o
+                0x0000080e                irq_handler7f
+                0x00000580                irq_handler12
+                0x00000736                irq_handler5b
+                0x000006c4                irq_handler48
+                0x00000700                irq_handler52
+                0x00000790                irq_handler6a
+                0x0000055c                irq_handler0c
+                0x000006a0                irq_handler42
+                0x000007e4                irq_handler78
+                0x0000062e                irq_handler2f
+                0x0000078a                irq_handler69
+                0x00000592                irq_handler15
+                0x000006ca                irq_handler49
+                0x00000766                irq_handler63
+                0x000006ee                irq_handler4f
+                0x000006e8                irq_handler4e
+                0x00000544                irq_handler08
+                0x00000538                irq_handler06
+                0x00000604                irq_handler28
+                0x0000067c                irq_handler3c
+                0x000007f0                irq_handler7a
+                0x00000634                irq_handler30
+                0x000007d8                irq_handler76
+                0x000007ba                irq_handler71
+                0x000005bc                irq_handler1c
+                0x00000676                irq_handler3b
+                0x000006e2                irq_handler4d
+                0x00000550                irq_handler0a
+                0x00000682                irq_handler3d
+                0x0000066a                irq_handler39
+                0x000005e6                irq_handler23
+                0x00000532                irq_handler05
+                0x000006be                irq_handler47
+                0x0000064c                irq_handler34
+                0x00000586                irq_handler13
+                0x00000778                irq_handler66
+                0x0000070c                irq_handler54
+                0x00000796                irq_handler6b
+                0x00000694                irq_handler40
+                0x00000730                irq_handler5a
+                0x00000670                irq_handler3a
+                0x000007c0                irq_handler72
+                0x000005b0                irq_handler1a
+                0x00000802                irq_handler7d
+                0x000006b8                irq_handler46
+                0x000005a4                irq_handler18
+                0x00000652                irq_handler35
+                0x0000071e                irq_handler57
+                0x00000784                irq_handler68
+                0x0000076c                irq_handler64
+                0x00000568                irq_handler0e
+                0x0000069a                irq_handler41
+                0x000007b4                irq_handler70
+                0x0000060a                irq_handler29
+                0x000007c6                irq_handler73
+                0x000007a2                irq_handler6d
+                0x00000724                irq_handler58
+                0x000006dc                irq_handler4c
+                0x000005e0                irq_handler22
+                0x0000077e                irq_handler67
+                0x000006a6                irq_handler43
+                0x00000646                irq_handler33
+                0x00000706                irq_handler53
+                0x00000748                irq_handler5e
+                0x0000052c                irq_handler04
+                0x00000658                irq_handler36
+                0x000005c8                irq_handler1e
+                0x000007cc                irq_handler74
+                0x0000058c                irq_handler14
+                0x0000057a                irq_handler11
+                0x00000814                usb_it_handler
+                0x000005aa                irq_handler19
+                0x000007a8                irq_handler6e
+                0x0000065e                irq_handler37
+                0x000007f6                irq_handler7b
+                0x000006fa                irq_handler51
+                0x00000622                irq_handler2d
+                0x0000056e                irq_handler0f
+                0x00000718                irq_handler56
+                0x000005c2                irq_handler1d
+                0x0000054a                irq_handler09
+                0x00000754                irq_handler60
+                0x00000688                irq_handler3e
+                0x000007ae                irq_handler6f
+                0x00000640                irq_handler32
+                0x000005b6                irq_handler1b
+                0x000007de                irq_handler77
+                0x00000628                irq_handler2e
+                0x00000742                irq_handler5d
+                0x000005f2                irq_handler25
+                0x0000074e                irq_handler5f
+                0x00000712                irq_handler55
+                0x0000075a                irq_handler61
+                0x000006b2                irq_handler45
+                0x00000574                irq_handler10
+                0x0000073c                irq_handler5c
+                0x0000059e                irq_handler17
+                0x000006d6                irq_handler4b
+                0x000006f4                irq_handler50
+                0x000005da                irq_handler21
+                0x000005f8                irq_handler26
+                0x00000772                irq_handler65
+                0x000007d2                irq_handler75
+                0x00000556                irq_handler0b
+                0x000005d4                irq_handler20
+                0x0000061c                irq_handler2c
+                0x00000598                irq_handler16
+                0x00000664                irq_handler38
+                0x000007fc                irq_handler7c
+                0x00000520                irq_handler02
+                0x00000760                irq_handler62
+                0x0000072a                irq_handler59
+                0x0000063a                irq_handler31
+                0x00000808                irq_handler7e
+                0x000005ec                irq_handler24
+                0x00000616                irq_handler2b
+                0x0000068e                irq_handler3f
+                0x0000079c                irq_handler6c
+                0x000005fe                irq_handler27
+                0x00000610                irq_handler2a
+                0x00000562                irq_handler0d
+                0x00000526                irq_handler03
+                0x0000053e                irq_handler07
+                0x000006ac                irq_handler44
+                0x000007ea                irq_handler79
+                0x000006d0                irq_handler4a
+                0x000005ce                irq_handler1f
+ *fill*         0x0000081a        0x2 00
+ .text          0x0000081c      0xc8c ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+                0x0000085a                enable_usb_pull_downs
+                0x0000088a                main
+ .text          0x000014a8      0x398 ../../../../../usb-host/src/mcf5222x/hid/hid_parser.o
+                0x00001684                write_item
+                0x000014a8                read_item
+ .text          0x00001840      0x5f4 ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+                0x000019f8                hid_set_idle
+                0x00001bb4                hid_init
+                0x00001840                hid_set_report
+                0x00001da8                hid_get_dev_type
+                0x0000197e                hid_set_protocol
+                0x000018de                hid_get_report
+ .text          0x00001e34      0x2e4 ../../../../../usb-host/src/mcf5222x/hid/host_hid_joy.o
+                0x00001ed2                hid_joy_get_y
+                0x00001e34                hid_joy_init
+                0x00001f14                hid_joy_get_hat
+                0x00001ee8                hid_joy_get_rz
+                0x0000207c                hid_joy_process
+                0x00001efe                hid_joy_get_slider
+                0x00001f2a                hid_joy_get_button
+                0x00001ebc                hid_joy_get_x
+ .text          0x00002118      0x502 ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+                0x00002594                hid_kbd_get_nkey
+                0x0000257e                hid_kbd_get_lgui
+                0x00002568                hid_kbd_get_rgui
+                0x000025f2                hid_kbd_get_key
+                0x000024e4                hid_kbd_get_lshift
+                0x0000253c                hid_kbd_get_rctrl
+                0x00002552                hid_kbd_get_lctrl
+                0x000024fa                hid_kbd_get_rshift
+                0x00002510                hid_kbd_get_ralt
+                0x00002526                hid_kbd_get_lalt
+                0x000021cc                hid_kbd_set_leds
+                0x00002416                hid_kbd_process
+                0x00002118                hid_kbd_init
+ *fill*         0x0000261a        0x2 00
+ .text          0x0000261c      0x280 ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+                0x0000261c                hid_mouse_init
+                0x000027d4                hid_mouse_process
+                0x0000268a                hid_mouse_get_y
+                0x00002674                hid_mouse_get_x
+                0x000026a0                hid_mouse_get_button
+ .text          0x0000289c     0x18ca ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+                0x0000306c                host_stop
+                0x00002da0                host_reset_bus
+                0x00002b16                host_add_ep
+                0x00003d34                host_receive
+                0x00003a60                host_send_control
+                0x00004004                host_ms_delay
+                0x0000300a                host_scan_for_device
+                0x00002acc                host_has_device
+                0x00002f28                host_init
+                0x00002ce0                host_modify_ep
+                0x00002c9e                host_remove_ep
+                0x000040ac                host_wakeup
+                0x00003e40                host_receive_control
+                0x00003c30                host_send
+                0x00004074                host_sleep
+ *fill*         0x00004166        0x2 00
+ .text          0x00004168      0xaea ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+                0x000049b0                find_ifc_ndx
+                0x00004874                find_ifc_csp
+                0x00004168                fill_setup_packet
+                0x000042fa                get_cfg_desc
+                0x0000476e                find_descriptor
+                0x000045ee                set_config
+                0x00004490                set_ep0_psize
+                0x0000454e                set_address
+                0x00004ae6                get_ifc_info
+                0x00004682                get_device_info
+                0x0000423a                get_dev_desc
+                0x00004bba                get_ep_info
+                0x00004a8e                get_cfg_info
+ *fill*         0x00004c52        0x2 00
+ .text          0x00004c54      0x2d0 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+                0x00004e96                uart_putch
+                0x00004c54                uart_init
+                0x00004e18                uart_set_bps
+                0x00004dec                uart_get_bps
+                0x00004f06                uart_kbhit
+                0x00004eec                uart_getch
+ .text          0x00004f24       0xa8 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+                0x00004f24                start_mS_timer
+                0x00004f8e                check_mS_timer
+ .text          0x00004fcc      0x1e4 ../../../../../usb-common/utils/utils.o
+                0x00004fcc                itoah
+                0x00005086                itoa
+                0x0000515c                strtoi
+ .text          0x000051b0      0x1fa ../../../../../usb-common/mcf5222x/target.o
+                0x00005238                init_ints
+                0x00005250                init_board
+                0x00005216                init_scm
+                0x00005372                _irq_disable
+                0x000052fa                Usb_Vbus_On
+                0x0000533e                Usb_Vbus_Stat
+                0x00005386                hw_init
+                0x0000531c                Usb_Vbus_Off
+                0x0000535e                _irq_restore
+ *fill*         0x000053aa        0x2 00
+ .text          0x000053ac        0x0 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/mcf5222x_vectors.o
+ .text          0x000053ac       0x5c ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/mcf5xxx_lo.o
+                0x000053b8                mcf5xxx_wr_vbr
+                0x000053c4                mcf5xxx_byterev
+                0x000053ac                mcf5xxx_wr_cacr
+                0x000053d2                asm_set_ipl
+ *(.rodata .rodata.*)
+ .rodata        0x00005408      0x2bd ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+ *fill*         0x000056c5        0x1 00
+ .rodata        0x000056c6      0x280 ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+ .rodata        0x00005946      0x100 ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+
+.data           0x20000000      0x254 load address 0x00005a46
+                0x20000000                __COPY_DST = .
+ *(.shdata)
+ *(.data .data.*)
+ .data          0x20000000        0x0 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/startup.o
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/hid/hid_parser.o
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+ .data          0x20000000      0x254 ../../../../../usb-host/src/mcf5222x/hid/host_hid_joy.o
+ .data          0x20000254        0x0 ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+ .data          0x20000254        0x0 ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+ .data          0x20000254        0x0 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .data          0x20000254        0x0 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .data          0x20000254        0x0 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .data          0x20000254        0x0 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .data          0x20000254        0x0 ../../../../../usb-common/utils/utils.o
+ .data          0x20000254        0x0 ../../../../../usb-common/mcf5222x/target.o
+ .data          0x20000254        0x0 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/mcf5222x_vectors.o
+ .data          0x20000254        0x0 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/mcf5xxx_lo.o
+                0x20000254                __COPY_END = .
+
+.bss            0x20000254      0x4b4
+                0x20000254                __ZERO_START = .
+ *(.shbss)
+ *(.bss .bss.*)
+ .bss           0x20000254        0x0 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/startup.o
+ .bss           0x20000254        0x0 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .bss           0x20000254        0x2 ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+                0x20000254                host_stp
+                0x20000255                sleep
+ *fill*         0x20000256        0x2 00
+ .bss           0x20000258        0x0 ../../../../../usb-host/src/mcf5222x/hid/hid_parser.o
+ .bss           0x20000258        0x0 ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+ .bss           0x20000258       0x1e ../../../../../usb-host/src/mcf5222x/hid/host_hid_joy.o
+ *fill*         0x20000276        0x2 00
+ .bss           0x20000278       0x18 ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+ .bss           0x20000290        0xe ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+ *fill*         0x2000029e        0x2 00
+ .bss           0x200002a0        0x0 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .bss           0x200002a0        0x0 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .bss           0x200002a0        0x2 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ *fill*         0x200002a2        0x2 00
+ .bss           0x200002a4        0x0 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .bss           0x200002a4        0x0 ../../../../../usb-common/utils/utils.o
+ .bss           0x200002a4        0x0 ../../../../../usb-common/mcf5222x/target.o
+ .bss           0x200002a4        0x8 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/mcf5222x_vectors.o
+                0x200002a4                d0_reset
+                0x200002a8                d1_reset
+ .bss           0x200002ac        0x0 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/mcf5xxx_lo.o
+ *(.gnu.linkonce.b.*)
+ *(COMMON)
+ COMMON         0x200002ac      0x32e ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+                0x200002ac                report_items
+                0x200002ae                hid_info
+                0x200002ba                report_item_list
+ COMMON         0x200005da       0x26 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+                0x200005da                my_device
+                0x200005fa                tr_error
+                0x200005fe                ep_info
+ COMMON         0x20000600      0x103 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+                0x20000600                std_error
+                0x20000604                dbuffer
+ *fill*         0x20000703        0x1 00
+ COMMON         0x20000704        0x4 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+                0x20000704                rs232_ctr
+                0x20000708                . = ALIGN (0x8)
+                0x20000708                __ZERO_END = .
+
+.bdt            0x20000708      0x2f8
+                0x20000800                . = ALIGN (0x200)
+ *fill*         0x20000708       0xf8 00
+                0x20000800                _BDT_BASE = .
+                0x20000a00                . = (. + 0x200)
+ *fill*         0x20000800      0x200 00
+
+.stack          0x20000a00     0x1000
+                0x20000a00                . = ALIGN (0x4)
+                0x20001a00                . = (. + 0x1000)
+ *fill*         0x20000a00     0x1000 00
+                0x20001a00                __SP_INIT = .
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x1c0
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/startup.o
+ .debug_aranges
+                0x00000020       0x20 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_aranges
+                0x00000040       0x20 ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+ .debug_aranges
+                0x00000060       0x20 ../../../../../usb-host/src/mcf5222x/hid/hid_parser.o
+ .debug_aranges
+                0x00000080       0x20 ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+ .debug_aranges
+                0x000000a0       0x20 ../../../../../usb-host/src/mcf5222x/hid/host_hid_joy.o
+ .debug_aranges
+                0x000000c0       0x20 ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+ .debug_aranges
+                0x000000e0       0x20 ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+ .debug_aranges
+                0x00000100       0x20 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_aranges
+                0x00000120       0x20 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_aranges
+                0x00000140       0x20 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_aranges
+                0x00000160       0x20 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_aranges
+                0x00000180       0x20 ../../../../../usb-common/utils/utils.o
+ .debug_aranges
+                0x000001a0       0x20 ../../../../../usb-common/mcf5222x/target.o
+
+.debug_pubnames
+                0x00000000     0x1080
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x25 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/startup.o
+ .debug_pubnames
+                0x00000025      0x901 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_pubnames
+                0x00000926       0x4c ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+ .debug_pubnames
+                0x00000972       0x2f ../../../../../usb-host/src/mcf5222x/hid/hid_parser.o
+ .debug_pubnames
+                0x000009a1       0xb3 ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+ .debug_pubnames
+                0x00000a54       0xb0 ../../../../../usb-host/src/mcf5222x/hid/host_hid_joy.o
+ .debug_pubnames
+                0x00000b04      0x123 ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+ .debug_pubnames
+                0x00000c27       0x7c ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+ .debug_pubnames
+                0x00000ca3      0x14a ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_pubnames
+                0x00000ded      0x111 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_pubnames
+                0x00000efe       0x7d ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_pubnames
+                0x00000f7b       0x38 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_pubnames
+                0x00000fb3       0x30 ../../../../../usb-common/utils/utils.o
+ .debug_pubnames
+                0x00000fe3       0x9d ../../../../../usb-common/mcf5222x/target.o
+
+.debug_info     0x00000000     0x53ea
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x1ff ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/startup.o
+ .debug_info    0x000001ff     0x10ad ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_info    0x000012ac      0x4eb ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+ .debug_info    0x00001797      0x317 ../../../../../usb-host/src/mcf5222x/hid/hid_parser.o
+ .debug_info    0x00001aae      0x761 ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+ .debug_info    0x0000220f      0x733 ../../../../../usb-host/src/mcf5222x/hid/host_hid_joy.o
+ .debug_info    0x00002942      0x903 ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+ .debug_info    0x00003245      0x5c3 ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+ .debug_info    0x00003808      0xa03 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_info    0x0000420b      0x860 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_info    0x00004a6b      0x2c5 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_info    0x00004d30      0x1a9 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_info    0x00004ed9      0x265 ../../../../../usb-common/utils/utils.o
+ .debug_info    0x0000513e      0x2ac ../../../../../usb-common/mcf5222x/target.o
+
+.debug_abbrev   0x00000000      0xcb5
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x7c ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/startup.o
+ .debug_abbrev  0x0000007c       0x4b ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_abbrev  0x000000c7      0x12c ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+ .debug_abbrev  0x000001f3       0xaa ../../../../../usb-host/src/mcf5222x/hid/hid_parser.o
+ .debug_abbrev  0x0000029d      0x122 ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+ .debug_abbrev  0x000003bf      0x112 ../../../../../usb-host/src/mcf5222x/hid/host_hid_joy.o
+ .debug_abbrev  0x000004d1      0x106 ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+ .debug_abbrev  0x000005d7      0x11d ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+ .debug_abbrev  0x000006f4      0x1c7 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_abbrev  0x000008bb      0x152 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_abbrev  0x00000a0d       0xca ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_abbrev  0x00000ad7       0xa2 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_abbrev  0x00000b79       0x8c ../../../../../usb-common/utils/utils.o
+ .debug_abbrev  0x00000c05       0xb0 ../../../../../usb-common/mcf5222x/target.o
+
+.debug_line     0x00000000     0x13c3
+ *(.debug_line)
+ .debug_line    0x00000000       0xb3 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/startup.o
+ .debug_line    0x000000b3      0x190 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_line    0x00000243      0x2a5 ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+ .debug_line    0x000004e8       0xed ../../../../../usb-host/src/mcf5222x/hid/hid_parser.o
+ .debug_line    0x000005d5      0x1ab ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+ .debug_line    0x00000780      0x182 ../../../../../usb-host/src/mcf5222x/hid/host_hid_joy.o
+ .debug_line    0x00000902      0x1b7 ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+ .debug_line    0x00000ab9      0x18b ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+ .debug_line    0x00000c44      0x2d9 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_line    0x00000f1d      0x185 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_line    0x000010a2       0xeb ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_line    0x0000118d       0xbf ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_line    0x0000124c       0xbd ../../../../../usb-common/utils/utils.o
+ .debug_line    0x00001309       0xba ../../../../../usb-common/mcf5222x/target.o
+
+.debug_frame    0x00000000     0x1818
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x2c ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/startup.o
+ .debug_frame   0x0000002c      0xbfc ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_frame   0x00000c28       0xe0 ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+ .debug_frame   0x00000d08       0x4c ../../../../../usb-host/src/mcf5222x/hid/hid_parser.o
+ .debug_frame   0x00000d54      0x104 ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+ .debug_frame   0x00000e58       0xf8 ../../../../../usb-host/src/mcf5222x/hid/host_hid_joy.o
+ .debug_frame   0x00000f50      0x184 ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+ .debug_frame   0x000010d4       0xb4 ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+ .debug_frame   0x00001188      0x274 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_frame   0x000013fc      0x194 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_frame   0x00001590       0xb4 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_frame   0x00001644       0x44 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_frame   0x00001688       0x60 ../../../../../usb-common/utils/utils.o
+ .debug_frame   0x000016e8      0x130 ../../../../../usb-common/mcf5222x/target.o
+
+.debug_str      0x00000000       0x77
+ *(.debug_str)
+ .debug_str     0x00000000        0x8 ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+ .debug_str     0x00000008       0x20 ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+ .debug_str     0x00000028       0x3a ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_str     0x00000062       0x15 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+
+.debug_loc      0x00000000     0x1c00
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x20 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/startup.o
+ .debug_loc     0x00000020      0xfe0 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_loc     0x00001000       0x60 ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+ .debug_loc     0x00001060       0x40 ../../../../../usb-host/src/mcf5222x/hid/hid_parser.o
+ .debug_loc     0x000010a0       0xe0 ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+ .debug_loc     0x00001180      0x120 ../../../../../usb-host/src/mcf5222x/hid/host_hid_joy.o
+ .debug_loc     0x000012a0      0x1c0 ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+ .debug_loc     0x00001460       0xc0 ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+ .debug_loc     0x00001520      0x280 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_loc     0x000017a0      0x1a0 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_loc     0x00001940       0xc0 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_loc     0x00001a00       0x40 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_loc     0x00001a40       0x60 ../../../../../usb-common/utils/utils.o
+ .debug_loc     0x00001aa0      0x160 ../../../../../usb-common/mcf5222x/target.o
+
+.debug_macinfo  0x00000000    0xc6b03
+ *(.debug_macinfo)
+ .debug_macinfo
+                0x00000000      0x9f5 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/startup.o
+ .debug_macinfo
+                0x000009f5      0xa06 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_macinfo
+                0x000013fb    0x163bc ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+ .debug_macinfo
+                0x000177b7     0x1321 ../../../../../usb-host/src/mcf5222x/hid/hid_parser.o
+ .debug_macinfo
+                0x00018ad8    0x16fe8 ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+ .debug_macinfo
+                0x0002fac0    0x15c5b ../../../../../usb-host/src/mcf5222x/hid/host_hid_joy.o
+ .debug_macinfo
+                0x0004571b    0x16f23 ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+ .debug_macinfo
+                0x0005c63e    0x15c5d ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+ .debug_macinfo
+                0x0007229b    0x15273 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_macinfo
+                0x0008750e     0x12f5 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_macinfo
+                0x00088803    0x147fd ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_macinfo
+                0x0009d000    0x14754 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_macinfo
+                0x000b1754      0xa06 ../../../../../usb-common/utils/utils.o
+ .debug_macinfo
+                0x000b215a    0x149a9 ../../../../../usb-common/mcf5222x/target.o
+                0x00005a46                __COPY_START = LOADADDR (.data)
+LOAD ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/startup.o
+LOAD ../../../../../usb-host/src/mcf5222x/host_ints.o
+LOAD ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+LOAD ../../../../../usb-host/src/mcf5222x/hid/hid_parser.o
+LOAD ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+LOAD ../../../../../usb-host/src/mcf5222x/hid/host_hid_joy.o
+LOAD ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+LOAD ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+LOAD ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+LOAD ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+LOAD ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+LOAD ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+LOAD ../../../../../usb-common/utils/utils.o
+LOAD ../../../../../usb-common/mcf5222x/target.o
+LOAD ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/mcf5222x_vectors.o
+LOAD ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/mcf5xxx_lo.o
+OUTPUT(hid.elf elf32-m68k)
+
+.comment        0x00000000      0x222
+ .comment       0x00000000       0x27 ../../../../../usb-host/projects/gcc-gmake/mcf52223/hid/startup.o
+ .comment       0x00000027       0x27 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .comment       0x0000004e       0x27 ../../../../../usb-host/src/mcf5222x/hid/hid_demo.o
+ .comment       0x00000075       0x27 ../../../../../usb-host/src/mcf5222x/hid/hid_parser.o
+ .comment       0x0000009c       0x27 ../../../../../usb-host/src/mcf5222x/hid/host_hid.o
+ .comment       0x000000c3       0x27 ../../../../../usb-host/src/mcf5222x/hid/host_hid_joy.o
+ .comment       0x000000ea       0x27 ../../../../../usb-host/src/mcf5222x/hid/host_hid_kbd.o
+ .comment       0x00000111       0x27 ../../../../../usb-host/src/mcf5222x/hid/host_hid_mouse.o
+ .comment       0x00000138       0x27 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .comment       0x0000015f       0x27 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .comment       0x00000186       0x27 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .comment       0x000001ad       0x27 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .comment       0x000001d4       0x27 ../../../../../usb-common/utils/utils.o
+ .comment       0x000001fb       0x27 ../../../../../usb-common/mcf5222x/target.o

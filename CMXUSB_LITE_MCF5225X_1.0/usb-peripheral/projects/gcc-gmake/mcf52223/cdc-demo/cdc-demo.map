@@ -1,0 +1,480 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+buf_ep31            0x20              ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+buf_ep01            0x8               ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+buf_ep30            0x20              ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+rs232_ctr           0x4               ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+buf_ep00            0x8               ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00040000         xr
+ram              0x20000000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00000000                __DYNAMIC = 0x0
+                0x20000000                PROVIDE (__SRAM, 0x20000000)
+                0x20000000                PROVIDE (_SRAM, 0x20000000)
+                0x40000000                PROVIDE (__IPSBAR, 0x40000000)
+                0x40000000                PROVIDE (_IPSBAR, 0x40000000)
+
+.text           0x00000000     0x40cc
+ *(.vectors)
+ .vectors       0x00000000      0x48c ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/mcf5222x_vectors.o
+                0x00000000                VECTOR_TABLE
+                0x00000418                __start
+                0x00000474                usb_it_handler
+ *(.text .text.*)
+ .text          0x0000048c       0xaa ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/startup.o
+                0x0000048c                low_level_init
+ *fill*         0x00000536        0x2 00
+ .text          0x00000538      0x2f4 ../../../../../usb-peripheral/src/mcf5222x/device_ints.o
+                0x00000826                irq_handler7f
+                0x00000598                irq_handler12
+                0x0000074e                irq_handler5b
+                0x000006dc                irq_handler48
+                0x00000718                irq_handler52
+                0x000007a8                irq_handler6a
+                0x00000574                irq_handler0c
+                0x000006b8                irq_handler42
+                0x000007fc                irq_handler78
+                0x00000646                irq_handler2f
+                0x000007a2                irq_handler69
+                0x000005aa                irq_handler15
+                0x000006e2                irq_handler49
+                0x0000077e                irq_handler63
+                0x00000706                irq_handler4f
+                0x00000700                irq_handler4e
+                0x0000055c                irq_handler08
+                0x00000550                irq_handler06
+                0x0000061c                irq_handler28
+                0x00000694                irq_handler3c
+                0x00000808                irq_handler7a
+                0x0000064c                irq_handler30
+                0x000007f0                irq_handler76
+                0x000007d2                irq_handler71
+                0x000005d4                irq_handler1c
+                0x0000068e                irq_handler3b
+                0x000006fa                irq_handler4d
+                0x00000568                irq_handler0a
+                0x0000069a                irq_handler3d
+                0x00000682                irq_handler39
+                0x000005fe                irq_handler23
+                0x0000054a                irq_handler05
+                0x000006d6                irq_handler47
+                0x00000664                irq_handler34
+                0x0000059e                irq_handler13
+                0x00000790                irq_handler66
+                0x00000724                irq_handler54
+                0x000007ae                irq_handler6b
+                0x000006ac                irq_handler40
+                0x00000748                irq_handler5a
+                0x00000688                irq_handler3a
+                0x000007d8                irq_handler72
+                0x000005c8                irq_handler1a
+                0x0000081a                irq_handler7d
+                0x000006d0                irq_handler46
+                0x000005bc                irq_handler18
+                0x0000066a                irq_handler35
+                0x00000736                irq_handler57
+                0x0000079c                irq_handler68
+                0x00000784                irq_handler64
+                0x00000580                irq_handler0e
+                0x000006b2                irq_handler41
+                0x000007cc                irq_handler70
+                0x00000622                irq_handler29
+                0x000007de                irq_handler73
+                0x000007ba                irq_handler6d
+                0x0000073c                irq_handler58
+                0x000006f4                irq_handler4c
+                0x000005f8                irq_handler22
+                0x00000796                irq_handler67
+                0x000006be                irq_handler43
+                0x0000065e                irq_handler33
+                0x0000071e                irq_handler53
+                0x00000760                irq_handler5e
+                0x00000544                irq_handler04
+                0x00000670                irq_handler36
+                0x000005e0                irq_handler1e
+                0x000007e4                irq_handler74
+                0x000005a4                irq_handler14
+                0x00000592                irq_handler11
+                0x000005c2                irq_handler19
+                0x000007c0                irq_handler6e
+                0x00000676                irq_handler37
+                0x0000080e                irq_handler7b
+                0x00000712                irq_handler51
+                0x0000063a                irq_handler2d
+                0x00000586                irq_handler0f
+                0x00000730                irq_handler56
+                0x000005da                irq_handler1d
+                0x00000562                irq_handler09
+                0x0000076c                irq_handler60
+                0x000006a0                irq_handler3e
+                0x000007c6                irq_handler6f
+                0x00000658                irq_handler32
+                0x000005ce                irq_handler1b
+                0x000007f6                irq_handler77
+                0x00000640                irq_handler2e
+                0x0000075a                irq_handler5d
+                0x0000060a                irq_handler25
+                0x00000766                irq_handler5f
+                0x0000072a                irq_handler55
+                0x00000772                irq_handler61
+                0x000006ca                irq_handler45
+                0x0000058c                irq_handler10
+                0x00000754                irq_handler5c
+                0x000005b6                irq_handler17
+                0x000006ee                irq_handler4b
+                0x0000070c                irq_handler50
+                0x000005f2                irq_handler21
+                0x00000610                irq_handler26
+                0x0000078a                irq_handler65
+                0x000007ea                irq_handler75
+                0x0000056e                irq_handler0b
+                0x000005ec                irq_handler20
+                0x00000634                irq_handler2c
+                0x000005b0                irq_handler16
+                0x0000067c                irq_handler38
+                0x00000814                irq_handler7c
+                0x00000538                irq_handler02
+                0x00000778                irq_handler62
+                0x00000742                irq_handler59
+                0x00000652                irq_handler31
+                0x00000820                irq_handler7e
+                0x00000604                irq_handler24
+                0x0000062e                irq_handler2b
+                0x000006a6                irq_handler3f
+                0x000007b4                irq_handler6c
+                0x00000616                irq_handler27
+                0x00000628                irq_handler2a
+                0x0000057a                irq_handler0d
+                0x0000053e                irq_handler03
+                0x00000556                irq_handler07
+                0x000006c4                irq_handler44
+                0x00000802                irq_handler79
+                0x000006e8                irq_handler4a
+                0x000005e6                irq_handler1f
+ .text          0x0000082c     0x26f8 ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+                0x000012a4                usb_stop_ep_rx
+                0x00001230                usb_stop_ep_tx
+                0x000009f0                usb_ep_is_busy
+                0x00001e60                usb_abort_ep
+                0x00000c08                usb_stop
+                0x00000aee                usb_init
+                0x0000082c                usb_get_rx_pptr
+                0x00000a2c                usb_get_state
+                0x000025f8                usb_it_handler1
+                0x00000a42                usb_ep_error
+                0x000009b2                usb_get_done
+                0x0000195a                usb_send
+                0x00001d1c                usb_receive
+ .text          0x00002f24      0x222 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+                0x00002f24                main
+ *fill*         0x00003146        0x2 00
+ .text          0x00003148      0x324 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+                0x000031d4                get_str_descriptor
+                0x00003340                get_ep_rx_buffer
+                0x00003188                get_cfg_descriptor
+                0x00003148                get_device_descriptor
+                0x000033b6                usb_cfg_init
+                0x000032cc                get_ep_descriptor
+                0x000033cc                enable_usb_pull_up
+                0x00003156                is_cfgd_index
+                0x000031a8                is_str_index
+                0x0000324e                is_ep_ndx
+                0x000031f6                is_ifc_ndx
+ .text          0x0000346c      0x2d0 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+                0x000036ae                uart_putch
+                0x0000346c                uart_init
+                0x00003630                uart_set_bps
+                0x00003604                uart_get_bps
+                0x0000371e                uart_kbhit
+                0x00003704                uart_getch
+ .text          0x0000373c      0x1fa ../../../../../usb-common/mcf5222x/target.o
+                0x000037c4                init_ints
+                0x000037dc                init_board
+                0x000037a2                init_scm
+                0x000038fe                _irq_disable
+                0x00003886                Usb_Vbus_On
+                0x000038ca                Usb_Vbus_Stat
+                0x00003912                hw_init
+                0x000038a8                Usb_Vbus_Off
+                0x000038ea                _irq_restore
+ *fill*         0x00003936        0x2 00
+ .text          0x00003938      0x534 ../../../../../usb-common/cdc_drv/usb_cdc.o
+                0x00003950                usb_reset_event
+                0x00003c90                cdc_init
+                0x00003cd0                cdc_process
+                0x00003c1c                cdc_line_coding_changed
+                0x0000396a                usb_ep0_callback
+                0x00003b18                cdc_getch
+                0x00003948                usb_wakeup_event
+                0x00003958                got_line_coding
+                0x00003940                usb_suspend_event
+                0x00003938                usb_bus_error_event
+                0x00003c46                cdc_get_line_coding
+                0x00003bb0                cdc_putch
+                0x00003b76                cdc_kbhit
+ .text          0x00003e6c      0x1e4 ../../../../../usb-common/utils/utils.o
+                0x00003e6c                itoah
+                0x00003f26                itoa
+                0x00003ffc                strtoi
+ .text          0x00004050        0x0 ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/mcf5222x_vectors.o
+ .text          0x00004050       0x5c ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/mcf5xxx_lo.o
+                0x0000405c                mcf5xxx_wr_vbr
+                0x00004068                mcf5xxx_byterev
+                0x00004050                mcf5xxx_wr_cacr
+                0x00004076                asm_set_ipl
+ *(.rodata .rodata.*)
+ .rodata        0x000040ac        0x4 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+ .rodata        0x000040b0       0x1c ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+                0x000040b0                usb_string_descriptors
+
+.data           0x20000000      0x160 load address 0x000040cc
+                0x20000000                __COPY_DST = .
+ *(.shdata)
+ *(.data .data.*)
+ .data          0x20000000        0x0 ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/startup.o
+ .data          0x20000000        0x0 ../../../../../usb-peripheral/src/mcf5222x/device_ints.o
+ .data          0x20000000        0x0 ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+ .data          0x20000000       0x4b ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+ *fill*         0x2000004b        0x1 00
+ .data          0x2000004c      0x109 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+                0x2000004c                string_descriptor0
+                0x200000b0                str_serail_number
+                0x200000ba                str_product
+                0x20000096                str_interface1
+                0x2000009e                str_interface2
+                0x20000050                str_manufacturer
+                0x20000100                usb_device_descriptor
+                0x2000006a                str_config
+                0x20000112                usb_config_descriptor
+ *fill*         0x20000155        0x3 00
+ .data          0x20000158        0x0 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .data          0x20000158        0x0 ../../../../../usb-common/mcf5222x/target.o
+ .data          0x20000158        0x7 ../../../../../usb-common/cdc_drv/usb_cdc.o
+ *fill*         0x2000015f        0x1 00
+ .data          0x20000160        0x0 ../../../../../usb-common/utils/utils.o
+ .data          0x20000160        0x0 ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/mcf5222x_vectors.o
+ .data          0x20000160        0x0 ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/mcf5xxx_lo.o
+                0x20000160                __COPY_END = .
+
+.bss            0x20000160      0x2d0
+                0x20000160                __ZERO_START = .
+ *(.shbss)
+ *(.bss .bss.*)
+ .bss           0x20000160        0x0 ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/startup.o
+ .bss           0x20000160        0x0 ../../../../../usb-peripheral/src/mcf5222x/device_ints.o
+ .bss           0x20000160      0x204 ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+ .bss           0x20000364        0x0 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+ .bss           0x20000364        0x0 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+ .bss           0x20000364        0x2 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ *fill*         0x20000366        0x2 00
+ .bss           0x20000368        0x0 ../../../../../usb-common/mcf5222x/target.o
+ .bss           0x20000368       0x6c ../../../../../usb-common/cdc_drv/usb_cdc.o
+ .bss           0x200003d4        0x0 ../../../../../usb-common/utils/utils.o
+ .bss           0x200003d4        0x8 ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/mcf5222x_vectors.o
+                0x200003d4                d0_reset
+                0x200003d8                d1_reset
+ .bss           0x200003dc        0x0 ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/mcf5xxx_lo.o
+ *(.gnu.linkonce.b.*)
+ *(COMMON)
+ COMMON         0x200003dc       0x50 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+                0x200003dc                buf_ep31
+                0x200003fc                buf_ep01
+                0x20000404                buf_ep30
+                0x20000424                buf_ep00
+ COMMON         0x2000042c        0x4 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+                0x2000042c                rs232_ctr
+                0x20000430                . = ALIGN (0x8)
+                0x20000430                __ZERO_END = .
+
+.bdt            0x20000430      0x3d0
+                0x20000600                . = ALIGN (0x200)
+ *fill*         0x20000430      0x1d0 00
+                0x20000600                _BDT_BASE = .
+                0x20000800                . = (. + 0x200)
+ *fill*         0x20000600      0x200 00
+
+.stack          0x20000800     0x1000
+                0x20000800                . = ALIGN (0x4)
+                0x20001800                . = (. + 0x1000)
+ *fill*         0x20000800     0x1000 00
+                0x20001800                __SP_INIT = .
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x120
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/startup.o
+ .debug_aranges
+                0x00000020       0x20 ../../../../../usb-peripheral/src/mcf5222x/device_ints.o
+ .debug_aranges
+                0x00000040       0x20 ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+ .debug_aranges
+                0x00000060       0x20 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+ .debug_aranges
+                0x00000080       0x20 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+ .debug_aranges
+                0x000000a0       0x20 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_aranges
+                0x000000c0       0x20 ../../../../../usb-common/mcf5222x/target.o
+ .debug_aranges
+                0x000000e0       0x20 ../../../../../usb-common/cdc_drv/usb_cdc.o
+ .debug_aranges
+                0x00000100       0x20 ../../../../../usb-common/utils/utils.o
+
+.debug_pubnames
+                0x00000000      0xe6b
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x25 ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/startup.o
+ .debug_pubnames
+                0x00000025      0x8ee ../../../../../usb-peripheral/src/mcf5222x/device_ints.o
+ .debug_pubnames
+                0x00000913       0xef ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+ .debug_pubnames
+                0x00000a02       0x1b ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+ .debug_pubnames
+                0x00000a1d      0x1f7 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+ .debug_pubnames
+                0x00000c14       0x7d ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_pubnames
+                0x00000c91       0x9d ../../../../../usb-common/mcf5222x/target.o
+ .debug_pubnames
+                0x00000d2e      0x10d ../../../../../usb-common/cdc_drv/usb_cdc.o
+ .debug_pubnames
+                0x00000e3b       0x30 ../../../../../usb-common/utils/utils.o
+
+.debug_info     0x00000000     0x3597
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x215 ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/startup.o
+ .debug_info    0x00000215     0x109f ../../../../../usb-peripheral/src/mcf5222x/device_ints.o
+ .debug_info    0x000012b4      0xceb ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+ .debug_info    0x00001f9f      0x299 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+ .debug_info    0x00002238      0x62f ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+ .debug_info    0x00002867      0x2d0 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_info    0x00002b37      0x2b7 ../../../../../usb-common/mcf5222x/target.o
+ .debug_info    0x00002dee      0x539 ../../../../../usb-common/cdc_drv/usb_cdc.o
+ .debug_info    0x00003327      0x270 ../../../../../usb-common/utils/utils.o
+
+.debug_abbrev   0x00000000      0x782
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x7c ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/startup.o
+ .debug_abbrev  0x0000007c       0x4b ../../../../../usb-peripheral/src/mcf5222x/device_ints.o
+ .debug_abbrev  0x000000c7      0x1f7 ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+ .debug_abbrev  0x000002be       0xa3 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+ .debug_abbrev  0x00000361       0xd2 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+ .debug_abbrev  0x00000433       0xca ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_abbrev  0x000004fd       0xb0 ../../../../../usb-common/mcf5222x/target.o
+ .debug_abbrev  0x000005ad      0x149 ../../../../../usb-common/cdc_drv/usb_cdc.o
+ .debug_abbrev  0x000006f6       0x8c ../../../../../usb-common/utils/utils.o
+
+.debug_line     0x00000000      0xe5c
+ *(.debug_line)
+ .debug_line    0x00000000       0xbe ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/startup.o
+ .debug_line    0x000000be      0x247 ../../../../../usb-peripheral/src/mcf5222x/device_ints.o
+ .debug_line    0x00000305      0x39f ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+ .debug_line    0x000006a4      0x1e8 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+ .debug_line    0x0000088c      0x1b2 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+ .debug_line    0x00000a3e       0xeb ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_line    0x00000b29       0xba ../../../../../usb-common/mcf5222x/target.o
+ .debug_line    0x00000be3      0x1bc ../../../../../usb-common/cdc_drv/usb_cdc.o
+ .debug_line    0x00000d9f       0xbd ../../../../../usb-common/utils/utils.o
+
+.debug_frame    0x00000000     0x14f4
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x2c ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/startup.o
+ .debug_frame   0x0000002c      0xbe4 ../../../../../usb-peripheral/src/mcf5222x/device_ints.o
+ .debug_frame   0x00000c10      0x39c ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+ .debug_frame   0x00000fac       0x58 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+ .debug_frame   0x00001004      0x12c ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+ .debug_frame   0x00001130       0xb4 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_frame   0x000011e4      0x130 ../../../../../usb-common/mcf5222x/target.o
+ .debug_frame   0x00001314      0x180 ../../../../../usb-common/cdc_drv/usb_cdc.o
+ .debug_frame   0x00001494       0x60 ../../../../../usb-common/utils/utils.o
+
+.debug_str      0x00000000       0x1c
+ *(.debug_str)
+ .debug_str     0x00000000       0x13 ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+ .debug_str     0x00000013        0x9 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+
+.debug_loc      0x00000000     0x18c0
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x20 ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/startup.o
+ .debug_loc     0x00000020      0xfc0 ../../../../../usb-peripheral/src/mcf5222x/device_ints.o
+ .debug_loc     0x00000fe0      0x340 ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+ .debug_loc     0x00001320       0x20 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+ .debug_loc     0x00001340      0x160 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+ .debug_loc     0x000014a0       0xc0 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_loc     0x00001560      0x160 ../../../../../usb-common/mcf5222x/target.o
+ .debug_loc     0x000016c0      0x1a0 ../../../../../usb-common/cdc_drv/usb_cdc.o
+ .debug_loc     0x00001860       0x60 ../../../../../usb-common/utils/utils.o
+
+.debug_macinfo  0x00000000    0x954d3
+ *(.debug_macinfo)
+ .debug_macinfo
+                0x00000000      0x9f4 ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/startup.o
+ .debug_macinfo
+                0x000009f4    0x153c2 ../../../../../usb-peripheral/src/mcf5222x/device_ints.o
+ .debug_macinfo
+                0x00015db6    0x15a55 ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+ .debug_macinfo
+                0x0002b80b    0x15662 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+ .debug_macinfo
+                0x00040e6d    0x15571 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+ .debug_macinfo
+                0x000563de    0x147fc ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_macinfo
+                0x0006abda    0x149a8 ../../../../../usb-common/mcf5222x/target.o
+ .debug_macinfo
+                0x0007f582    0x1554c ../../../../../usb-common/cdc_drv/usb_cdc.o
+ .debug_macinfo
+                0x00094ace      0xa05 ../../../../../usb-common/utils/utils.o
+                0x000040cc                __COPY_START = LOADADDR (.data)
+LOAD ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/startup.o
+LOAD ../../../../../usb-peripheral/src/mcf5222x/device_ints.o
+LOAD ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+LOAD ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+LOAD ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+LOAD ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+LOAD ../../../../../usb-common/mcf5222x/target.o
+LOAD ../../../../../usb-common/cdc_drv/usb_cdc.o
+LOAD ../../../../../usb-common/utils/utils.o
+LOAD ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/mcf5222x_vectors.o
+LOAD ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/mcf5xxx_lo.o
+OUTPUT(cdc-demo.elf elf32-m68k)
+
+.comment        0x00000000      0x15f
+ .comment       0x00000000       0x27 ../../../../../usb-peripheral/projects/gcc-gmake/mcf52223/cdc-demo/startup.o
+ .comment       0x00000027       0x27 ../../../../../usb-peripheral/src/mcf5222x/device_ints.o
+ .comment       0x0000004e       0x27 ../../../../../usb-peripheral/src/mcf5222x/usb-drv/usb.o
+ .comment       0x00000075       0x27 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_main.o
+ .comment       0x0000009c       0x27 ../../../../../usb-peripheral/src/mcf5222x/cdc-demo/cdc_usb_config.o
+ .comment       0x000000c3       0x27 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .comment       0x000000ea       0x27 ../../../../../usb-common/mcf5222x/target.o
+ .comment       0x00000111       0x27 ../../../../../usb-common/cdc_drv/usb_cdc.o
+ .comment       0x00000138       0x27 ../../../../../usb-common/utils/utils.o

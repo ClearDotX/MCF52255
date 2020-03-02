@@ -1,0 +1,70 @@
+#/*
+# * File:		iflash.lcf
+# * Purpose:	Linker file for the M52223EVB
+# *
+# * Notes:		Project running in internal Flash
+# *
+# */
+
+MEMORY 
+{
+	flash		(RX)	: ORIGIN = 0x00000000, LENGTH = 0x00020000
+	ram         (RWX)   : ORIGIN = 0x20000000,  LENGTH = 0x00004000
+}
+
+SECTIONS
+{
+	__IPSBAR		= 0x40000000;
+
+	__SRAM_SIZE	    = SIZEOF(ram);
+
+    __FLASH_SIZE	= SIZEOF(flash);
+
+    /* Constant objects. */
+	.flash :
+	{
+        __FLASH	        = .;
+		mcf5222x_vectors.s (.text)
+		*(.text)
+		*(.rodata)
+		. 				= ALIGN(0x10);
+		___COPY_START		= .;
+	} > flash
+
+    /* Inicialised data. This needs to be copied to RAM runtime. It will be
+       allocated after .flash. */
+	.data : AT(___COPY_START)
+	{
+	    .               = ALIGN(0x10);
+	    __SRAM     		= .;
+		___COPY_DST		= .;
+		*(.data)
+		*(.sdata)
+		___COPY_END		= .;
+		. 				= ALIGN(512);
+	} > ram
+
+	.bss :
+	{
+	    .               = ALIGN(4);
+		___ZERO_START	= .;
+
+
+		*(.sbss)
+		*(SCOMMON)
+		*(.bss)
+		*(COMMON)
+		___ZERO_END 		= .;
+        /* Buffer descriptor base address
+           shall be aligned to 512 byte boundary.
+           Size shall be 512 bytes. */
+        .				= ALIGN(512);
+        __BDT_BASE		= .;
+        .               = . + 512;
+        __BDT_END       = .;
+        .               = ALIGN(0x10);
+		__SP_END		= .;
+		.				= . + (2*1024);
+		__SP_INIT		= .;
+	} >> ram
+}

@@ -1,0 +1,761 @@
+Archive member included because of file (symbol)
+
+../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+                              ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o (fn_findfirst)
+../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+                              ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o) (_f_writeglsector)
+../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+                              ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o) (_f_writefatsector)
+../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+                              ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o (fn_open)
+../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+                              ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o) (f_getdate)
+../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+                              ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o) (_f_getword)
+../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+                              ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o) (_f_checkname)
+../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+                              ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o) (gl_sector)
+../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
+                              ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o) (mst_readsector)
+
+Allocating common symbols
+Common symbol       size              file
+
+std_error           0x4               ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+gl_file             0x34              ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+gl_sector           0x200             ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+my_device           0x20              ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+dbuffer             0xff              ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+rs232_ctr           0x4               ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+mst_info            0xc               ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+tr_error            0x4               ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ep_info             0x2               ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+gl_volume           0x34              ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00040000         xr
+ram              0x20000000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00000000                __DYNAMIC = 0x0
+                0x20000000                PROVIDE (__SRAM, 0x20000000)
+                0x20000000                PROVIDE (_SRAM, 0x20000000)
+                0x40000000                PROVIDE (__IPSBAR, 0x40000000)
+                0x40000000                PROVIDE (_IPSBAR, 0x40000000)
+
+.text           0x00000000     0x905a
+ *(.vectors)
+ .vectors       0x00000000      0x474 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/mcf5222x_vectors.o
+                0x00000000                VECTOR_TABLE
+                0x00000418                __start
+ *(.text .text.*)
+ .text          0x00000474       0xaa ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/startup.o
+                0x00000474                low_level_init
+ *fill*         0x0000051e        0x2 00
+ .text          0x00000520      0x2fa ../../../../../usb-host/src/mcf5222x/host_ints.o
+                0x0000080e                irq_handler7f
+                0x00000580                irq_handler12
+                0x00000736                irq_handler5b
+                0x000006c4                irq_handler48
+                0x00000700                irq_handler52
+                0x00000790                irq_handler6a
+                0x0000055c                irq_handler0c
+                0x000006a0                irq_handler42
+                0x000007e4                irq_handler78
+                0x0000062e                irq_handler2f
+                0x0000078a                irq_handler69
+                0x00000592                irq_handler15
+                0x000006ca                irq_handler49
+                0x00000766                irq_handler63
+                0x000006ee                irq_handler4f
+                0x000006e8                irq_handler4e
+                0x00000544                irq_handler08
+                0x00000538                irq_handler06
+                0x00000604                irq_handler28
+                0x0000067c                irq_handler3c
+                0x000007f0                irq_handler7a
+                0x00000634                irq_handler30
+                0x000007d8                irq_handler76
+                0x000007ba                irq_handler71
+                0x000005bc                irq_handler1c
+                0x00000676                irq_handler3b
+                0x000006e2                irq_handler4d
+                0x00000550                irq_handler0a
+                0x00000682                irq_handler3d
+                0x0000066a                irq_handler39
+                0x000005e6                irq_handler23
+                0x00000532                irq_handler05
+                0x000006be                irq_handler47
+                0x0000064c                irq_handler34
+                0x00000586                irq_handler13
+                0x00000778                irq_handler66
+                0x0000070c                irq_handler54
+                0x00000796                irq_handler6b
+                0x00000694                irq_handler40
+                0x00000730                irq_handler5a
+                0x00000670                irq_handler3a
+                0x000007c0                irq_handler72
+                0x000005b0                irq_handler1a
+                0x00000802                irq_handler7d
+                0x000006b8                irq_handler46
+                0x000005a4                irq_handler18
+                0x00000652                irq_handler35
+                0x0000071e                irq_handler57
+                0x00000784                irq_handler68
+                0x0000076c                irq_handler64
+                0x00000568                irq_handler0e
+                0x0000069a                irq_handler41
+                0x000007b4                irq_handler70
+                0x0000060a                irq_handler29
+                0x000007c6                irq_handler73
+                0x000007a2                irq_handler6d
+                0x00000724                irq_handler58
+                0x000006dc                irq_handler4c
+                0x000005e0                irq_handler22
+                0x0000077e                irq_handler67
+                0x000006a6                irq_handler43
+                0x00000646                irq_handler33
+                0x00000706                irq_handler53
+                0x00000748                irq_handler5e
+                0x0000052c                irq_handler04
+                0x00000658                irq_handler36
+                0x000005c8                irq_handler1e
+                0x000007cc                irq_handler74
+                0x0000058c                irq_handler14
+                0x0000057a                irq_handler11
+                0x00000814                usb_it_handler
+                0x000005aa                irq_handler19
+                0x000007a8                irq_handler6e
+                0x0000065e                irq_handler37
+                0x000007f6                irq_handler7b
+                0x000006fa                irq_handler51
+                0x00000622                irq_handler2d
+                0x0000056e                irq_handler0f
+                0x00000718                irq_handler56
+                0x000005c2                irq_handler1d
+                0x0000054a                irq_handler09
+                0x00000754                irq_handler60
+                0x00000688                irq_handler3e
+                0x000007ae                irq_handler6f
+                0x00000640                irq_handler32
+                0x000005b6                irq_handler1b
+                0x000007de                irq_handler77
+                0x00000628                irq_handler2e
+                0x00000742                irq_handler5d
+                0x000005f2                irq_handler25
+                0x0000074e                irq_handler5f
+                0x00000712                irq_handler55
+                0x0000075a                irq_handler61
+                0x000006b2                irq_handler45
+                0x00000574                irq_handler10
+                0x0000073c                irq_handler5c
+                0x0000059e                irq_handler17
+                0x000006d6                irq_handler4b
+                0x000006f4                irq_handler50
+                0x000005da                irq_handler21
+                0x000005f8                irq_handler26
+                0x00000772                irq_handler65
+                0x000007d2                irq_handler75
+                0x00000556                irq_handler0b
+                0x000005d4                irq_handler20
+                0x0000061c                irq_handler2c
+                0x00000598                irq_handler16
+                0x00000664                irq_handler38
+                0x000007fc                irq_handler7c
+                0x00000520                irq_handler02
+                0x00000760                irq_handler62
+                0x0000072a                irq_handler59
+                0x0000063a                irq_handler31
+                0x00000808                irq_handler7e
+                0x000005ec                irq_handler24
+                0x00000616                irq_handler2b
+                0x0000068e                irq_handler3f
+                0x0000079c                irq_handler6c
+                0x000005fe                irq_handler27
+                0x00000610                irq_handler2a
+                0x00000562                irq_handler0d
+                0x00000526                irq_handler03
+                0x0000053e                irq_handler07
+                0x000006ac                irq_handler44
+                0x000007ea                irq_handler79
+                0x000006d0                irq_handler4a
+                0x000005ce                irq_handler1f
+ *fill*         0x0000081a        0x2 00
+ .text          0x0000081c      0x5a4 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+                0x00000a26                cmd_dump
+                0x0000081c                enable_usb_pull_downs
+                0x00000982                cmd_dir
+                0x00000c12                cmd_type
+                0x00000cee                main
+ .text          0x00000dc0      0xa2e ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+                0x00000dc0                scsi_init
+                0x0000152e                scsi_read
+                0x000017bc                scsi_test_unit_ready
+                0x000017c8                scsi_get_lun_info
+                0x00000e7c                scsi_close_device
+                0x00000dde                scsi_reset_lun
+                0x00000e52                scsi_open_device
+                0x00001766                scsi_write
+ *fill*         0x000017ee        0x2 00
+ .text          0x000017f0      0x8c6 ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+                0x000017f0                usb_mst_reset
+                0x00001c20                usb_mst_init
+                0x00001cb4                usb_mst_transfer
+                0x00001940                usb_mst_getnlun
+ *fill*         0x000020b6        0x2 00
+ .text          0x000020b8     0x18ca ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+                0x00002888                host_stop
+                0x000025bc                host_reset_bus
+                0x00002332                host_add_ep
+                0x00003550                host_receive
+                0x0000327c                host_send_control
+                0x00003820                host_ms_delay
+                0x00002826                host_scan_for_device
+                0x000022e8                host_has_device
+                0x00002744                host_init
+                0x000024fc                host_modify_ep
+                0x000024ba                host_remove_ep
+                0x000038c8                host_wakeup
+                0x0000365c                host_receive_control
+                0x0000344c                host_send
+                0x00003890                host_sleep
+ *fill*         0x00003982        0x2 00
+ .text          0x00003984      0xaea ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+                0x000041cc                find_ifc_ndx
+                0x00004090                find_ifc_csp
+                0x00003984                fill_setup_packet
+                0x00003b16                get_cfg_desc
+                0x00003f8a                find_descriptor
+                0x00003e0a                set_config
+                0x00003cac                set_ep0_psize
+                0x00003d6a                set_address
+                0x00004302                get_ifc_info
+                0x00003e9e                get_device_info
+                0x00003a56                get_dev_desc
+                0x000043d6                get_ep_info
+                0x000042aa                get_cfg_info
+ *fill*         0x0000446e        0x2 00
+ .text          0x00004470      0x2d0 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+                0x000046b2                uart_putch
+                0x00004470                uart_init
+                0x00004634                uart_set_bps
+                0x00004608                uart_get_bps
+                0x00004722                uart_kbhit
+                0x00004708                uart_getch
+ .text          0x00004740       0xa8 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+                0x00004740                start_mS_timer
+                0x000047aa                check_mS_timer
+ .text          0x000047e8      0x1fa ../../../../../usb-common/mcf5222x/target.o
+                0x00004870                init_ints
+                0x00004888                init_board
+                0x0000484e                init_scm
+                0x000049aa                _irq_disable
+                0x00004932                Usb_Vbus_On
+                0x00004976                Usb_Vbus_Stat
+                0x000049be                hw_init
+                0x00004954                Usb_Vbus_Off
+                0x00004996                _irq_restore
+ *fill*         0x000049e2        0x2 00
+ .text          0x000049e4      0x59e ../../../../../usb-common/terminal/hcc_terminal.o
+                0x000049e4                print
+                0x00004ccc                terminal_process
+                0x00004edc                terminal_delete_cmd
+                0x00004c7a                terminal_init
+                0x00004a2a                skipp_space
+                0x00004ac6                cmp_str
+                0x00004e82                terminal_add_cmd
+                0x00004a66                find_word
+ *fill*         0x00004f82        0x2 00
+ .text          0x00004f84        0x0 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/mcf5222x_vectors.o
+ .text          0x00004f84       0x5c ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/mcf5xxx_lo.o
+                0x00004f90                mcf5xxx_wr_vbr
+                0x00004f9c                mcf5xxx_byterev
+                0x00004f84                mcf5xxx_wr_cacr
+                0x00004faa                asm_set_ipl
+ .text          0x00004fe0      0xc54 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+                0x00004fe0                _f_findfilewc
+                0x00005598                _f_findpath
+                0x0000588a                _f_addentry
+                0x000055b0                fn_findfirst
+                0x00005518                _f_setdecluster
+                0x00005482                _f_getdecluster
+                0x0000566a                fn_findnext
+ .text          0x00005c34      0x182 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+                0x00005c34                _f_checkstatus
+                0x00005cf2                _f_readglsector
+                0x00005c3e                _f_writeglsector
+ *fill*         0x00005db6        0x2 00
+ .text          0x00005db8      0x948 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+                0x0000648a                _f_clustertopos
+                0x00005e5a                _f_getfatsector
+                0x00006662                _f_removechain
+                0x00005db8                _f_writefatsector
+                0x0000652a                _f_getcurrsector
+                0x00005f00                _f_setclustervalue
+                0x00006234                _f_getclustervalue
+                0x000065c6                _f_alloccluster
+ .text          0x00006700     0x164c ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+                0x00007c12                fn_tell
+                0x00007c60                fn_eof
+                0x0000762e                fn_read
+                0x00007ca6                fn_rewind
+                0x00007cc6                fn_putc
+                0x00006d62                fn_open
+                0x00007898                fn_write
+                0x00007430                _f_updatefileentry
+                0x00006700                fn_filelength
+                0x0000757a                fn_close
+                0x00007d0a                fn_getc
+                0x00007b20                fn_seek
+ .text          0x00007d4c       0xce ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+                0x00007d4c                f_getdate
+                0x00007db4                f_gettime
+ *fill*         0x00007e1a        0x2 00
+ .text          0x00007e1c      0x20a ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+                0x00007f6a                _f_memcpy
+                0x00007fda                _f_toupper
+                0x00007e9e                _f_getlong
+                0x00007fa6                _f_memset
+                0x00007e1c                _f_getword
+                0x00007e68                _f_setword
+                0x00007f1c                _f_setlong
+ *fill*         0x00008026        0x2 00
+ .text          0x00008028      0x576 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+                0x00008106                _f_checkname
+                0x0000814a                _f_checknamewc
+                0x0000842c                _f_setfsname
+                0x00008212                _f_setnameext
+ *fill*         0x0000859e        0x2 00
+ .text          0x000085a0      0x686 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+                0x00008aa0                fn_getfreespace
+                0x000089f0                _f_getvolume
+                0x00008c02                fn_initvolume
+ *fill*         0x00008c26        0x2 00
+ .text          0x00008c28       0x40 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
+                0x00008c48                mst_writesector
+                0x00008c28                mst_readsector
+ *(.rodata .rodata.*)
+ .rodata        0x00008c68      0x330 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+                0x00008d35                hdigits
+                0x00008d46                ascii
+ .rodata        0x00008f98       0x9e ../../../../../usb-common/terminal/hcc_terminal.o
+ .rodata        0x00009036       0x24 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+
+.data           0x20000000        0x0 load address 0x0000905a
+                0x20000000                __COPY_DST = .
+ *(.shdata)
+ *(.data .data.*)
+ .data          0x20000000        0x0 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/startup.o
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .data          0x20000000        0x0 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .data          0x20000000        0x0 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .data          0x20000000        0x0 ../../../../../usb-common/mcf5222x/target.o
+ .data          0x20000000        0x0 ../../../../../usb-common/terminal/hcc_terminal.o
+ .data          0x20000000        0x0 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/mcf5222x_vectors.o
+ .data          0x20000000        0x0 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/mcf5xxx_lo.o
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+ .data          0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
+                0x20000000                __COPY_END = .
+
+.bss            0x20000000      0x528
+                0x20000000                __ZERO_START = .
+ *(.shbss)
+ *(.bss .bss.*)
+ .bss           0x20000000        0x0 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/startup.o
+ .bss           0x20000000        0x0 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .bss           0x20000000        0x2 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+ *fill*         0x20000002        0x2 00
+ .bss           0x20000004       0x36 ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+ *fill*         0x2000003a        0x2 00
+ .bss           0x2000003c        0x4 ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+ .bss           0x20000040        0x0 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .bss           0x20000040        0x0 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .bss           0x20000040        0x2 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ *fill*         0x20000042        0x2 00
+ .bss           0x20000044        0x0 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .bss           0x20000044        0x0 ../../../../../usb-common/mcf5222x/target.o
+ .bss           0x20000044      0x136 ../../../../../usb-common/terminal/hcc_terminal.o
+ *fill*         0x2000017a        0x2 00
+ .bss           0x2000017c        0x8 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/mcf5222x_vectors.o
+                0x2000017c                d0_reset
+                0x20000180                d1_reset
+ .bss           0x20000184        0x0 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/mcf5xxx_lo.o
+ .bss           0x20000184        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+ .bss           0x20000184        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+ .bss           0x20000184        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+ .bss           0x20000184        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+ .bss           0x20000184        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+ .bss           0x20000184        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+ .bss           0x20000184        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+ .bss           0x20000184        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+ .bss           0x20000184        0x0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
+ *(.gnu.linkonce.b.*)
+ *(COMMON)
+ COMMON         0x20000184        0xc ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+                0x20000184                mst_info
+ COMMON         0x20000190       0x26 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+                0x20000190                my_device
+                0x200001b0                tr_error
+                0x200001b4                ep_info
+ COMMON         0x200001b6      0x103 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+                0x200001b6                std_error
+                0x200001ba                dbuffer
+ *fill*         0x200002b9        0x1 00
+ COMMON         0x200002ba        0x4 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+                0x200002ba                rs232_ctr
+ COMMON         0x200002be      0x268 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+                0x200002be                gl_file
+                0x200002f2                gl_sector
+                0x200004f2                gl_volume
+                0x20000528                . = ALIGN (0x8)
+ *fill*         0x20000526        0x2 00
+                0x20000528                __ZERO_END = .
+
+.bdt            0x20000528      0x2d8
+                0x20000600                . = ALIGN (0x200)
+ *fill*         0x20000528       0xd8 00
+                0x20000600                _BDT_BASE = .
+                0x20000800                . = (. + 0x200)
+ *fill*         0x20000600      0x200 00
+
+.stack          0x20000800     0x1000
+                0x20000800                . = ALIGN (0x4)
+                0x20001800                . = (. + 0x1000)
+ *fill*         0x20000800     0x1000 00
+                0x20001800                __SP_INIT = .
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x280
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/startup.o
+ .debug_aranges
+                0x00000020       0x20 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_aranges
+                0x00000040       0x20 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+ .debug_aranges
+                0x00000060       0x20 ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+ .debug_aranges
+                0x00000080       0x20 ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+ .debug_aranges
+                0x000000a0       0x20 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_aranges
+                0x000000c0       0x20 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_aranges
+                0x000000e0       0x20 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_aranges
+                0x00000100       0x20 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_aranges
+                0x00000120       0x20 ../../../../../usb-common/mcf5222x/target.o
+ .debug_aranges
+                0x00000140       0x20 ../../../../../usb-common/terminal/hcc_terminal.o
+ .debug_aranges
+                0x00000160       0x20 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+ .debug_aranges
+                0x00000180       0x20 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+ .debug_aranges
+                0x000001a0       0x20 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+ .debug_aranges
+                0x000001c0       0x20 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+ .debug_aranges
+                0x000001e0       0x20 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+ .debug_aranges
+                0x00000200       0x20 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+ .debug_aranges
+                0x00000220       0x20 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+ .debug_aranges
+                0x00000240       0x20 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+ .debug_aranges
+                0x00000260       0x20 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
+
+.debug_pubnames
+                0x00000000     0x12e8
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x25 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/startup.o
+ .debug_pubnames
+                0x00000025      0x901 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_pubnames
+                0x00000926       0x71 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+ .debug_pubnames
+                0x00000997       0xaa ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+ .debug_pubnames
+                0x00000a41       0x6b ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+ .debug_pubnames
+                0x00000aac      0x14a ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_pubnames
+                0x00000bf6      0x111 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_pubnames
+                0x00000d07       0x7d ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_pubnames
+                0x00000d84       0x38 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_pubnames
+                0x00000dbc       0x9d ../../../../../usb-common/mcf5222x/target.o
+ .debug_pubnames
+                0x00000e59       0x9a ../../../../../usb-common/terminal/hcc_terminal.o
+ .debug_pubnames
+                0x00000ef3       0x8d ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+ .debug_pubnames
+                0x00000f80       0x4e ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+ .debug_pubnames
+                0x00000fce       0xba ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+ .debug_pubnames
+                0x00001088       0xb6 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+ .debug_pubnames
+                0x0000113e       0x2e ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+ .debug_pubnames
+                0x0000116c       0x79 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+ .debug_pubnames
+                0x000011e5       0x59 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+ .debug_pubnames
+                0x0000123e       0x71 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+ .debug_pubnames
+                0x000012af       0x39 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
+
+.debug_info     0x00000000     0x7a71
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x211 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/startup.o
+ .debug_info    0x00000211     0x10b6 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_info    0x000012c7      0x761 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+ .debug_info    0x00001a28      0x8f9 ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+ .debug_info    0x00002321      0x81e ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+ .debug_info    0x00002b3f      0xa0c ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_info    0x0000354b      0x869 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_info    0x00003db4      0x2ce ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_info    0x00004082      0x1b2 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_info    0x00004234      0x2b5 ../../../../../usb-common/mcf5222x/target.o
+ .debug_info    0x000044e9      0x583 ../../../../../usb-common/terminal/hcc_terminal.o
+ .debug_info    0x00004a6c      0x9c7 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+ .debug_info    0x00005433      0x46e ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+ .debug_info    0x000058a1      0x7eb ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+ .debug_info    0x0000608c      0xb05 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+ .debug_info    0x00006b91      0x163 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+ .debug_info    0x00006cf4      0x2dd ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+ .debug_info    0x00006fd1      0x3aa ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+ .debug_info    0x0000737b      0x5a9 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+ .debug_info    0x00007924      0x14d ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
+
+.debug_abbrev   0x00000000     0x1585
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x7c ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/startup.o
+ .debug_abbrev  0x0000007c       0x4b ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_abbrev  0x000000c7      0x168 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+ .debug_abbrev  0x0000022f      0x1df ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+ .debug_abbrev  0x0000040e      0x17c ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+ .debug_abbrev  0x0000058a      0x1c7 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_abbrev  0x00000751      0x152 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_abbrev  0x000008a3       0xca ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_abbrev  0x0000096d       0xa2 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_abbrev  0x00000a0f       0xb0 ../../../../../usb-common/mcf5222x/target.o
+ .debug_abbrev  0x00000abf      0x192 ../../../../../usb-common/terminal/hcc_terminal.o
+ .debug_abbrev  0x00000c51      0x19d ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+ .debug_abbrev  0x00000dee       0xd3 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+ .debug_abbrev  0x00000ec1      0x16c ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+ .debug_abbrev  0x0000102d      0x174 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+ .debug_abbrev  0x000011a1       0x69 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+ .debug_abbrev  0x0000120a       0xd4 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+ .debug_abbrev  0x000012de       0xe4 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+ .debug_abbrev  0x000013c2      0x153 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+ .debug_abbrev  0x00001515       0x70 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
+
+.debug_line     0x00000000     0x2136
+ *(.debug_line)
+ .debug_line    0x00000000       0xbc ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/startup.o
+ .debug_line    0x000000bc      0x190 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_line    0x0000024c      0x2e4 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+ .debug_line    0x00000530      0x21e ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+ .debug_line    0x0000074e      0x1b6 ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+ .debug_line    0x00000904      0x2d9 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_line    0x00000bdd      0x185 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_line    0x00000d62       0xeb ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_line    0x00000e4d       0xbf ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_line    0x00000f0c       0xba ../../../../../usb-common/mcf5222x/target.o
+ .debug_line    0x00000fc6      0x13e ../../../../../usb-common/terminal/hcc_terminal.o
+ .debug_line    0x00001104      0x268 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+ .debug_line    0x0000136c      0x18c ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+ .debug_line    0x000014f8      0x228 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+ .debug_line    0x00001720      0x2f2 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+ .debug_line    0x00001a12       0xff ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+ .debug_line    0x00001b11      0x143 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+ .debug_line    0x00001c54      0x176 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+ .debug_line    0x00001dca      0x1e6 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+ .debug_line    0x00001fb0      0x186 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
+
+.debug_frame    0x00000000     0x1f74
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x2c ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/startup.o
+ .debug_frame   0x0000002c      0xbfc ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_frame   0x00000c28       0xf0 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+ .debug_frame   0x00000d18      0x1ec ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+ .debug_frame   0x00000f04      0x12c ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+ .debug_frame   0x00001030      0x274 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_frame   0x000012a4      0x194 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_frame   0x00001438       0xb4 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_frame   0x000014ec       0x44 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_frame   0x00001530      0x130 ../../../../../usb-common/mcf5222x/target.o
+ .debug_frame   0x00001660      0x15c ../../../../../usb-common/terminal/hcc_terminal.o
+ .debug_frame   0x000017bc      0x158 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+ .debug_frame   0x00001914       0x64 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+ .debug_frame   0x00001978      0x108 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+ .debug_frame   0x00001a80      0x280 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+ .debug_frame   0x00001d00       0x4c ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+ .debug_frame   0x00001d4c       0xbc ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+ .debug_frame   0x00001e08       0xa4 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+ .debug_frame   0x00001eac       0x7c ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+ .debug_frame   0x00001f28       0x4c ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
+
+.debug_str      0x00000000      0x1f9
+ *(.debug_str)
+ .debug_str     0x00000000       0x24 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+ .debug_str     0x00000024        0xe ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+ .debug_str     0x00000032        0xf ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+ .debug_str     0x00000041       0x3a ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_str     0x0000007b       0x15 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_str     0x00000090        0x9 ../../../../../usb-common/terminal/hcc_terminal.o
+ .debug_str     0x00000099       0x35 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+ .debug_str     0x000000ce       0x22 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+ .debug_str     0x000000f0       0x3f ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+ .debug_str     0x0000012f       0x49 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+ .debug_str     0x00000178       0x12 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+ .debug_str     0x0000018a       0x12 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+ .debug_str     0x0000019c       0x12 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+ .debug_str     0x000001ae       0x39 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+ .debug_str     0x000001e7       0x12 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
+
+.debug_loc      0x00000000     0x22c0
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x20 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/startup.o
+ .debug_loc     0x00000020      0xfe0 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_loc     0x00001000       0xc0 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+ .debug_loc     0x000010c0      0x220 ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+ .debug_loc     0x000012e0      0x100 ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+ .debug_loc     0x000013e0      0x280 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_loc     0x00001660      0x1a0 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_loc     0x00001800       0xc0 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_loc     0x000018c0       0x40 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_loc     0x00001900      0x160 ../../../../../usb-common/mcf5222x/target.o
+ .debug_loc     0x00001a60      0x180 ../../../../../usb-common/terminal/hcc_terminal.o
+ .debug_loc     0x00001be0      0x120 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+ .debug_loc     0x00001d00       0x60 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+ .debug_loc     0x00001d60      0x100 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+ .debug_loc     0x00001e60      0x1e0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+ .debug_loc     0x00002040       0x40 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+ .debug_loc     0x00002080       0xe0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+ .debug_loc     0x00002160       0xa0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+ .debug_loc     0x00002200       0x80 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+ .debug_loc     0x00002280       0x40 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
+
+.debug_macinfo  0x00000000    0x77de4
+ *(.debug_macinfo)
+ .debug_macinfo
+                0x00000000      0x9f5 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/startup.o
+ .debug_macinfo
+                0x000009f5      0xa06 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .debug_macinfo
+                0x000013fb    0x15a65 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+ .debug_macinfo
+                0x00016e60     0x143c ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+ .debug_macinfo
+                0x0001829c     0x145e ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+ .debug_macinfo
+                0x000196fa    0x15273 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .debug_macinfo
+                0x0002e96d     0x12f5 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .debug_macinfo
+                0x0002fc62    0x147fd ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .debug_macinfo
+                0x0004445f    0x14754 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .debug_macinfo
+                0x00058bb3    0x149a9 ../../../../../usb-common/mcf5222x/target.o
+ .debug_macinfo
+                0x0006d55c      0xa17 ../../../../../usb-common/terminal/hcc_terminal.o
+ .debug_macinfo
+                0x0006df73     0x11a0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+ .debug_macinfo
+                0x0006f113     0x1182 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+ .debug_macinfo
+                0x00070295     0x1191 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+ .debug_macinfo
+                0x00071426     0x11a0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+ .debug_macinfo
+                0x000725c6     0x109e ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+ .debug_macinfo
+                0x00073664     0x110c ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+ .debug_macinfo
+                0x00074770     0x110c ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+ .debug_macinfo
+                0x0007587c     0x11a0 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+ .debug_macinfo
+                0x00076a1c     0x13c8 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
+                0x0000905a                __COPY_START = LOADADDR (.data)
+LOAD ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/startup.o
+LOAD ../../../../../usb-host/src/mcf5222x/host_ints.o
+LOAD ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+LOAD ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+LOAD ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+LOAD ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+LOAD ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+LOAD ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+LOAD ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+LOAD ../../../../../usb-common/mcf5222x/target.o
+LOAD ../../../../../usb-common/terminal/hcc_terminal.o
+LOAD ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/mcf5222x_vectors.o
+LOAD ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/mcf5xxx_lo.o
+LOAD ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a
+OUTPUT(mass-storage.elf elf32-m68k)
+
+.comment        0x00000000      0x30c
+ .comment       0x00000000       0x27 ../../../../../usb-host/projects/gcc-gmake/mcf52223/mass-storage/startup.o
+ .comment       0x00000027       0x27 ../../../../../usb-host/src/mcf5222x/host_ints.o
+ .comment       0x0000004e       0x27 ../../../../../usb-host/src/mcf5222x/mass-storage/mst_main.o
+ .comment       0x00000075       0x27 ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/scsi.o
+ .comment       0x0000009c       0x27 ../../../../../usb-host/src/mcf5222x/mass-storage/mst-drv/usb-mst.o
+ .comment       0x000000c3       0x27 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_host.o
+ .comment       0x000000ea       0x27 ../../../../../usb-host/src/mcf5222x/usb-drv/usb_utils.o
+ .comment       0x00000111       0x27 ../../../../../usb-common/mcf5222x/uart-drv/uart.o
+ .comment       0x00000138       0x27 ../../../../../usb-common/mcf5222x/timer-drv/timer.o
+ .comment       0x0000015f       0x27 ../../../../../usb-common/mcf5222x/target.o
+ .comment       0x00000186       0x27 ../../../../../usb-common/terminal/hcc_terminal.o
+ .comment       0x000001ad       0x27 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(dir.o)
+ .comment       0x000001d4       0x27 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(drv.o)
+ .comment       0x000001fb       0x27 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(fat.o)
+ .comment       0x00000222       0x27 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(file.o)
+ .comment       0x00000249       0x27 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(port.o)
+ .comment       0x00000270       0x27 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util.o)
+ .comment       0x00000297       0x27 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(util_sfn.o)
+ .comment       0x000002be       0x27 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(volume.o)
+ .comment       0x000002e5       0x27 ../../../../../usb-host/src/mcf5222x/mass-storage/thin-lib/thin-lib-gcc.a(mst_glue.o)
