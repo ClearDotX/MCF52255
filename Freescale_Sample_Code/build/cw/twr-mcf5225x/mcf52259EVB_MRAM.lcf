@@ -1,0 +1,81 @@
+#/*
+# * File:		mram.lcf
+# * Purpose:	Linker file for the M52259EVB
+# *
+# * Notes:		Project running in external MRAM
+# *
+# */
+
+MEMORY 
+{
+    rom     	(RX) : ORIGIN = 0x00000000,  LENGTH = 0x00080000
+    ram     	(RW) : ORIGIN = 0x20000000,  LENGTH = 0x00010000
+    vector_mram (RW) : ORIGIN = 0x80000000,  LENGTH = 0x00000418
+    mram    	(RWX): ORIGIN = 0x80000420,  LENGTH = 0x0007FBE0
+}
+
+SECTIONS 
+{
+    ___IPSBAR           = 0x40000000;
+
+    ___MRAM             = 0x80000000;
+    ___MRAM_SIZE        = (512 * 1024);
+
+    ___SRAM             = 0x20000000;
+    ___SRAM_SIZE        = (64 * 1024);
+
+    ___FLASH            = 0x00000000;
+    ___FLASH_SIZE       = (256 * 1024);
+  
+	.vectors :
+	{
+		. = ALIGN (0x4);
+	} > vector_mram  
+	
+	___VECTOR_RAM			= ADDR(.vectors);
+    
+    .text :
+    {
+        .               = ALIGN(0x10);
+        mcf5225x_vectors.s (.text)
+        *(.text)
+        *(.rodata)
+         .              = ALIGN(0x10);
+        ___DATA_ROM     = .;
+    } > mram
+
+    .data_bss : AT(___DATA_ROM)
+    {
+        ___DATA_RAM     = .;
+        *(.data)
+        *(.sdata)
+        ___DATA_END     = .;
+        .               = ALIGN(0x10);
+        ___BSS_START    = .;
+        *(.sbss)
+        *(SCOMMON)
+        *(.bss)
+        *(COMMON)
+        ___BSS_END      = .;
+        /* Buffer descriptor base address
+           shall be aligned to 512 byte boundary.
+           Size shall be 512 bytes. */
+        .				= ALIGN(512);
+        __BDT_BASE		= .;
+        .               = . + 512;
+        __BDT_END       = .;
+                 .               = ALIGN(0x10);
+        ___SP_END       = .;
+        .               = . + (0x800);
+        ___SP_INIT      = .;
+        .               = . + (4);
+        ___HEAP_START   = .;
+        ___HEAP_END     = ___SRAM + ___SRAM_SIZE;
+    } > ram
+
+	___heap_addr = ___HEAP_START;
+	___heap_size = (___HEAP_END - ___HEAP_START - 4) & 0x0FFFFF00;
+	___STACK_SIZE = ___SP_INIT - ___SP_END;
+}
+
+
